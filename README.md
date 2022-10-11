@@ -2,7 +2,7 @@
 
 ![kindle1](./img/kindle1.jpg)
 
-居家隔离7天，闲来没事就想起来一直落灰的`Kindle`。如何把它利用起来呢？首先我想到的就是能不能当`HA`的浏览器，显示控制`HA`，很遗憾自带的浏览器连登录都做不到，所以只能找找其他方案。另外一个想法是能不能刷安卓装个浏览器不就好了，可以查了才发现`Kindle`的安卓并没有想象的好，一个是收费贼贵，另外一个看反馈是卡顿严重，所以安卓的我暂时也没试，有兴趣的可以看看这个[帖子](https://community.wvbtech.com/d/3027 
+居家隔离`7`天，闲来没事就想起来一直落灰的`Kindle`。如何把它利用起来呢？首先我想到的就是能不能当`HA`的浏览器，显示控制`HA`，很遗憾自带的浏览器连登录都做不到，所以只能找找其他方案。另外一个想法是能不能刷安卓装个浏览器不就好了，可以查了才发现`Kindle`的安卓并没有想象的好，一个是收费贼贵，另外一个看反馈是卡顿严重，所以安卓的我暂时也没试，有兴趣的可以看看这个[帖子](https://community.wvbtech.com/d/3027 
 )，已破解收费的安卓。最终选定了这个项目[screensaver](https://github.com/sibbl/hass-lovelace-kindle-screensaver)。这是个基于越狱后安装两个插件实现的项目，原理是把HA的页面生成Kindle锁屏图片替换自带锁屏墙纸
 
 ## `越狱`
@@ -60,6 +60,8 @@
 
 通过`HA`控制`Kindle`锁屏下刷新其实就是`ssh`登录`Kindle`后执行插件脚本
 具体我就细说了，每个人`HA`情况不同，需要搞定`HA`能`ssh`登录`Kindle`，这步搞定就没啥了，ssh无线管理安装这个[插件](https://bookfere.com/post/59.html)
+
+## 注意不插充电线锁屏状态`Kindle`的`Wifi`是会断开的，所以要想任何时候都能刷新，需要常电
 
 ```
   ssh kindle /mnt/us/extensions/onlinescreensaver/bin/update.sh
